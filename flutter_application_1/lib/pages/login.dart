@@ -81,6 +81,7 @@ class _LoginPage extends State<LoginPage> {
                           child: Column(
                             children: <Widget>[
                               TextFormField(
+                                // Campo de E-mail
                                 decoration:
                                     InputDecoration(hintText: 'Email Address'),
                                 validator: (value) {
@@ -88,6 +89,11 @@ class _LoginPage extends State<LoginPage> {
                                     return 'Você precisa digitar um endereço de email';
                                   }
                                   return null;
+                                },
+                                onSaved: (txt) {
+                                  setState(() {
+                                    email = txt!;
+                                  });
                                 },
                               ),
                               TextFormField(
@@ -100,11 +106,17 @@ class _LoginPage extends State<LoginPage> {
                                   }
                                   return null;
                                 },
+                                onSaved: (txt) {
+                                  setState(() {
+                                    senha = txt!;
+                                  });
+                                },
                               ),
                               ElevatedButton(
                                 onPressed: () => {
                                   if (_formKey.currentState!.validate())
                                     {
+                                      _formKey.currentState!.save(),
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(
                                         const SnackBar(
