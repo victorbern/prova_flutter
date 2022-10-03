@@ -5,7 +5,6 @@ import 'package:provider/provider.dart';
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final validationService = Provider.of<Usuario>(context);
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -72,42 +71,57 @@ class LoginPage extends StatelessWidget {
                           child: Column(
                             children: <Widget>[
                               TextFormField(
-                                decoration: InputDecoration(
-                                  hintText: 'Nome Completo',
-                                  errorText: validationService.nome.error,
-                                ),
+                                decoration:
+                                    InputDecoration(hintText: 'Nome Completo'),
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Você precisa digitar um nome';
+                                  }
+                                  return null;
+                                },
                                 onChanged: (String txt) {
-                                  validationService.setNome(txt);
+                                  Provider.of<Usuario>(context, listen: false)
+                                      .setNome(txt);
                                 },
                               ),
                               TextFormField(
                                 // Campo de E-mail
                                 decoration: InputDecoration(
-                                  hintText: 'Endereço de email',
-                                  errorText: validationService.email.error,
-                                ),
+                                    hintText: 'Endereço de email'),
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Você precisa digitar um endereço de email';
+                                  }
+                                  return null;
+                                },
                                 onChanged: (String txt) {
-                                  validationService.setEmail(txt);
+                                  Provider.of<Usuario>(context, listen: false)
+                                      .setEmail(txt);
                                 },
                               ),
                               TextFormField(
                                 obscureText: true,
                                 decoration: InputDecoration(
-                                  hintText: 'Digite a sua senha',
-                                  errorText: validationService.senha.error,
-                                ),
+                                    hintText: 'Digite a sua senha'),
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Você precisa digitar a sua senha';
+                                  }
+                                  return null;
+                                },
                                 onChanged: (String txt) {
-                                  validationService.setSenha(txt);
+                                  Provider.of<Usuario>(context, listen: false)
+                                      .setSenha(txt);
                                 },
                               ),
                               ElevatedButton(
-                                onPressed: () => {
-                                  (!validationService.isValid)
-                                      ? null
-                                      : validationService.submitData(),
-                                },
+                                onPressed: () => {},
                                 child: Text('LOGIN'),
                               ),
+                              // Consumer<Usuario>(
+                              //   builder: (context, usuario, child) =>
+                              //       Text(usuario.email.toString()),
+                              // ),
                             ],
                           ),
                         ),

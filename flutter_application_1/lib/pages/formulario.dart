@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 class Formulario extends StatefulWidget {
@@ -17,7 +15,16 @@ class _Formulario extends State<Formulario> {
       child: Column(
         children: <Widget>[
           TextFormField(
-            decoration: InputDecoration(hintText: 'Email Address'),
+            decoration: InputDecoration(hintText: 'Nome completo'),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Você precisa digitar um nome';
+              }
+              return null;
+            },
+          ),
+          TextFormField(
+            decoration: InputDecoration(hintText: 'Endereço de e-mail'),
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Você precisa digitar um endereço de email';
