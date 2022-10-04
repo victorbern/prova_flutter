@@ -9,9 +9,9 @@ class LoginPage extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Container(
-          decoration: new BoxDecoration(
-            image: new DecorationImage(
-              image: new AssetImage("assets/images/background_login.png"),
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/background_login.png"),
               fit: BoxFit.cover,
             ),
           ),
@@ -20,7 +20,7 @@ class LoginPage extends StatelessWidget {
             child: Column(
               children: [
                 Row(
-                  children: [
+                  children: const [
                     Image(
                       width: 50,
                       image: AssetImage("assets/images/logo.png"),
@@ -33,9 +33,9 @@ class LoginPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Row(
-                        children: [
+                        children: const [
                           Text(
-                              style: const TextStyle(
+                              style: TextStyle(
                                   fontSize: 30,
                                   fontFamily: 'Alegreya',
                                   color: Color.fromARGB(255, 255, 255, 255)),
@@ -44,10 +44,10 @@ class LoginPage extends StatelessWidget {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
+                        children: const [
                           Text(
                               textAlign: TextAlign.left,
-                              style: const TextStyle(
+                              style: TextStyle(
                                   fontSize: 22,
                                   fontFamily: 'Alegreya_Sans',
                                   color: Color.fromARGB(180, 255, 255, 255)),
@@ -55,10 +55,10 @@ class LoginPage extends StatelessWidget {
                         ],
                       ),
                       Row(
-                        children: [
+                        children: const [
                           Text(
                               textAlign: TextAlign.left,
-                              style: const TextStyle(
+                              style: TextStyle(
                                   fontSize: 22,
                                   fontFamily: 'Alegreya_Sans',
                                   color: Color.fromARGB(180, 255, 255, 255)),
@@ -70,9 +70,10 @@ class LoginPage extends StatelessWidget {
                           child: Column(
                             children: <Widget>[
                               TextFormField(
-                                style: TextStyle(color: Colors.white),
+                                style: const TextStyle(color: Colors.white),
                                 decoration: InputDecoration(
-                                  hintStyle: TextStyle(color: Colors.white),
+                                  hintStyle:
+                                      const TextStyle(color: Colors.white),
                                   hintText: 'Nome Completo',
                                   errorText: validationService.nome.error,
                                 ),
@@ -81,9 +82,10 @@ class LoginPage extends StatelessWidget {
                                 },
                               ),
                               TextFormField(
-                                style: TextStyle(color: Colors.white),
+                                style: const TextStyle(color: Colors.white),
                                 decoration: InputDecoration(
-                                  hintStyle: TextStyle(color: Colors.white),
+                                  hintStyle:
+                                      const TextStyle(color: Colors.white),
                                   hintText: 'Endereço de email',
                                   errorText: validationService.email.error,
                                 ),
@@ -93,9 +95,10 @@ class LoginPage extends StatelessWidget {
                               ),
                               TextFormField(
                                 obscureText: true,
-                                style: TextStyle(color: Colors.white),
+                                style: const TextStyle(color: Colors.white),
                                 decoration: InputDecoration(
-                                  hintStyle: TextStyle(color: Colors.white),
+                                  hintStyle:
+                                      const TextStyle(color: Colors.white),
                                   hintText: 'Digite a sua senha',
                                   errorText: validationService.senha.error,
                                 ),
@@ -109,7 +112,11 @@ class LoginPage extends StatelessWidget {
                                       ? null
                                       : Navigator.pushNamed(context, '/home'),
                                 },
-                                child: Text('LOGIN'),
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: const Color.fromARGB(
+                                      124, 154, 146, 100), // Background color
+                                ),
+                                child: const Text('LOGIN'),
                               ),
                             ],
                           ),
