@@ -36,9 +36,9 @@ class MyApp extends StatelessWidget {
         '/sounds': (context) => SoundsPage(),
         '/meditation': (context) => const MeditationPage(),
       },
-      initialRoute: '/meditation',
+      initialRoute: '/sounds',
       debugShowCheckedModeBanner: false,
-      home: const MeditationPage(),
+      // home: const MeditationPage(),
     );
   }
 }
