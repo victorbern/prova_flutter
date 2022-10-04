@@ -12,6 +12,7 @@ class HomePage extends StatelessWidget {
         body: Container(
           color: Color.fromARGB(255, 37, 51, 52),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Container(
                 padding: const EdgeInsets.only(top: 50),
@@ -22,7 +23,7 @@ class HomePage extends StatelessWidget {
                       children: [
                         Image(
                           width: 40,
-                          image: AssetImage("assets/images/menu (2).png"),
+                          image: AssetImage("assets/images/menu.png"),
                         ),
                       ],
                     ),
@@ -46,7 +47,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(top: 40, left: 25, right: 25),
+                margin: const EdgeInsets.only(top: 40, left: 25),
                 child: Column(
                   children: [
                     Row(
@@ -76,7 +77,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(top: 40),
+                // margin: const EdgeInsets.only(top: 40),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -93,6 +94,121 @@ class HomePage extends StatelessWidget {
                     Image(
                       image: AssetImage("assets/images/anxious.png"),
                     ),
+                  ],
+                ),
+              ),
+              Container(
+                // margin: const EdgeInsets.only(top: 22),
+                padding: const EdgeInsets.only(left: 30, top: 22),
+                width: 350,
+                height: 170,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Color.fromARGB(255, 247, 243, 240),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 37, 51, 52),
+                                  fontSize: 25,
+                                  fontFamily: 'Alegreya',
+                                ),
+                                "Meditation 101")
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontFamily: 'Alegreya_Sans',
+                                ),
+                                "Techniques, Benefits, and \na Beginner's How-To"),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Image(
+                          width: 120,
+                          image: AssetImage("assets/images/meditation101.png"),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                // margin: const EdgeInsets.only(top: 22),
+                padding: const EdgeInsets.only(left: 30, top: 22),
+                width: 350,
+                height: 170,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Color.fromARGB(255, 247, 243, 240),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 37, 51, 52),
+                                fontSize: 25,
+                                fontFamily: 'Alegreya',
+                              ),
+                              "Cardio Meditation",
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontFamily: 'Alegreya_Sans',
+                                ),
+                                "Basics of Yoga for Beginners \nor Experienced Professionals"),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Image(
+                          width: 120,
+                          image: AssetImage("assets/images/meditation101.png"),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      icon: Image.asset('assets/images/logo.png'),
+                      iconSize: 50,
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/onboarding');
+                      },
+                    )
                   ],
                 ),
               ),
