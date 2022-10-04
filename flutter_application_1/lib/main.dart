@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       onGenerateTitle: (context) => "Flutter APP",
-      initialRoute: RouteGenerator.onboardingPage,
+      initialRoute: RouteGenerator.meditationPage,
       onGenerateRoute: RouteGenerator.generateRoute,
       debugShowCheckedModeBanner: false,
     );

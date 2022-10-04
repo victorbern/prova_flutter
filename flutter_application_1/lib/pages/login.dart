@@ -66,6 +66,7 @@ class LoginPage extends StatelessWidget {
                         ],
                       ),
                       Container(
+                        margin: EdgeInsets.only(top: 30),
                         child: Form(
                           child: Column(
                             children: <Widget>[
@@ -106,18 +107,28 @@ class LoginPage extends StatelessWidget {
                                   validationService.setSenha(txt);
                                 },
                               ),
-                              ElevatedButton(
-                                onPressed: () => {
-                                  (!validationService.isValid)
-                                      ? null
-                                      : Navigator.pushNamed(context, '/home'),
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color.fromARGB(
-                                      124, 154, 146, 100), // Background color
-                                ),
-                                child: const Text('LOGIN'),
-                              ),
+                              Container(
+                                margin: EdgeInsets.only(top: 50),
+                                child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor:
+                                          Color.fromARGB(255, 124, 154, 146),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      minimumSize: Size(321, 61),
+                                    ),
+                                    onPressed: () =>
+                                        {Navigator.pushNamed(context, '/home')},
+                                    child: Text(
+                                        style: const TextStyle(
+                                            fontSize: 25,
+                                            fontFamily: 'Alegreya_Sans',
+                                            color: Color.fromARGB(
+                                                255, 255, 255, 255)),
+                                        "Login")),
+                              )
                             ],
                           ),
                         ),

@@ -51,35 +51,45 @@ class _MeditationPage extends State<MeditationPage> {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(top: 0, left: 0, right: 0),
+                margin: const EdgeInsets.only(top: 50, left: 0, right: 0),
                 child: Column(
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
-                        Text(
+                        Center(
+                            child: Text(
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 30,
                             fontFamily: 'Alegreya',
                           ),
-                          "Meditation",
-                        ),
+                          "Acompanhe sua meditação",
+                        ))
                       ],
                     ),
+                    SizedBox(height: 50),
+                    SizedBox(height: 50),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton(
-                          onPressed: () async {
-                            final cameras = await availableCameras();
-                            await availableCameras().then((value) =>
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (_) =>
-                                            CameraPage(cameras: value))));
-                          },
-                          child: const Text("Take a Picture"),
-                        )
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  Color.fromARGB(255, 124, 154, 146),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              minimumSize: Size(321, 61),
+                            ),
+                            onPressed: () =>
+                                {Navigator.pushNamed(context, '/home')},
+                            child: Text(
+                                style: const TextStyle(
+                                    fontSize: 25,
+                                    fontFamily: 'Alegreya_Sans',
+                                    color: Color.fromARGB(255, 255, 255, 255)),
+                                "Tirar foto"))
                       ],
                     ),
                   ],
