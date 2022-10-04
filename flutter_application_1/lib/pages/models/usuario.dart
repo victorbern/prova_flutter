@@ -14,6 +14,9 @@ class Usuario with ChangeNotifier {
     if (_nome.value != null && _email.value != null && _senha.value != null) {
       return true;
     } else {
+      setNome('');
+      setEmail('');
+      setSenha('');
       return false;
     }
   }

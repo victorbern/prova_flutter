@@ -72,7 +72,9 @@ class LoginPage extends StatelessWidget {
                           child: Column(
                             children: <Widget>[
                               TextFormField(
+                                style: TextStyle(color: Colors.white),
                                 decoration: InputDecoration(
+                                  hintStyle: TextStyle(color: Colors.white),
                                   hintText: 'Nome Completo',
                                   errorText: validationService.nome.error,
                                 ),
@@ -81,8 +83,9 @@ class LoginPage extends StatelessWidget {
                                 },
                               ),
                               TextFormField(
-                                // Campo de E-mail
+                                style: TextStyle(color: Colors.white),
                                 decoration: InputDecoration(
+                                  hintStyle: TextStyle(color: Colors.white),
                                   hintText: 'Endereço de email',
                                   errorText: validationService.email.error,
                                 ),
@@ -92,7 +95,9 @@ class LoginPage extends StatelessWidget {
                               ),
                               TextFormField(
                                 obscureText: true,
+                                style: TextStyle(color: Colors.white),
                                 decoration: InputDecoration(
+                                  hintStyle: TextStyle(color: Colors.white),
                                   hintText: 'Digite a sua senha',
                                   errorText: validationService.senha.error,
                                 ),
@@ -104,7 +109,7 @@ class LoginPage extends StatelessWidget {
                                 onPressed: () => {
                                   (!validationService.isValid)
                                       ? null
-                                      : validationService.submitData(),
+                                      : Navigator.pushNamed(context, '/home'),
                                 },
                                 child: Text('LOGIN'),
                               ),
