@@ -5,7 +5,7 @@ class Sound with ChangeNotifier {
   List<SoundClass> _items = [
     SoundClass("Painting Forest", 59899, "20 Min"),
     SoundClass("Mountaineers", 45697, "15 Min"),
-    SoundClass("Lovely Deserts", 9428, "39 Min")
+    SoundClass("Lovely Deserts", 9428, "39 Min"),
   ];
 
   get items => _items;
