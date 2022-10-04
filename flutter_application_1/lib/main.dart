@@ -3,6 +3,7 @@ import 'package:flutter_application_1/pages/home.dart';
 import 'package:flutter_application_1/pages/login.dart';
 import 'package:flutter_application_1/pages/models/usuario.dart';
 import 'package:flutter_application_1/pages/onboarding.dart';
+import 'package:flutter_application_1/pages/meditation.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -16,12 +17,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Flutter App',
       routes: {
         '/onboarding': (context) => Onboarding(),
         '/login': (context) => LoginPage(),
         '/home': (context) => HomePage(),
+        '/meditation': (context) => const MeditationPage(),
       },
-      initialRoute: '/onboarding',
+      initialRoute: '/meditation',
+      debugShowCheckedModeBanner: false,
+      home: const MeditationPage(),
     );
   }
 }
