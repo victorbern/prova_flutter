@@ -18,8 +18,6 @@ class LoginPage extends StatelessWidget {
           child: Container(
             margin: const EdgeInsets.only(top: 101.0, left: 27, right: 27),
             child: Column(
-              // crossAxisAlignment: CrossAxisAlignment.center,
-              // mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Row(
                   children: [
