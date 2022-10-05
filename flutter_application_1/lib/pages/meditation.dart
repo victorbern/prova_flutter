@@ -69,7 +69,6 @@ class _MeditationPage extends State<MeditationPage> {
                       ],
                     ),
                     SizedBox(height: 50),
-                    SizedBox(height: 50),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -82,14 +81,21 @@ class _MeditationPage extends State<MeditationPage> {
                               ),
                               minimumSize: Size(321, 61),
                             ),
-                            onPressed: () =>
-                                {Navigator.pushNamed(context, '/home')},
+                            onPressed: () async {
+                              final cameras = await availableCameras();
+                              await availableCameras().then((value) =>
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (_) =>
+                                              CameraPage(cameras: value))));
+                            },
                             child: Text(
                                 style: const TextStyle(
                                     fontSize: 25,
                                     fontFamily: 'Alegreya_Sans',
                                     color: Color.fromARGB(255, 255, 255, 255)),
-                                "Tirar foto"))
+                                "Tirar foto")),
                       ],
                     ),
                   ],
